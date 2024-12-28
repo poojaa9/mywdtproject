@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMart</title>
+    <link rel="stylesheet" href="F:\Documents\Desktop\sass\Shopping\watch.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1><img src="WhatsApp Image 2024-12-22 at 10.59.18 PM.jpeg" width="250px"></h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for watches...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="icons">
+            <a>Cart</a>
+            <a>Account</a>
+            <a>Menu</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            
+            
+            <a href="#exclusive-products" class="cta-button" id="shop-now">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Exclusive Product Section -->
+    <section id="exclusive-products" class="exclusive-products">
+        <h2>Exclusive Watches</h2>
+        <div class="product-container" id="product-container">
+            <div class="product-card" data-price="299">
+                <img src="w1.jpg" alt="Classic Watch">
+                <h3>Classic Watch</h3>
+                <p>$299</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="499">
+                <img src="w2.jpg" alt="Luxury Watch">
+                <h3>Luxury Watch</h3>
+                <p>$499</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="499">
+                <img src="w3.jpg" alt="Luxury Watch">
+                <h3>Dynamic Watch</h3>
+                <p>$399</p>
+                <a href="#">Buy Now</a>
+            </div> <div class="product-card" data-price="499">
+                <img src="w4.jpg" alt="Luxury Watch">
+                <h3>Brandes Watch</h3>
+                <p>$699</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="199">
+                <img src="w5.jpg" alt="Sport Watch">
+                <h3>Recomended Watch</h3>
+                <p>$599</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="199">
+                <img src="w6.jpg" alt="Sport Watch">
+                <h3> Watch</h3>
+                <p>$199</p>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="contact-info">
+                <p>Contact Us: contact@watchmart.com</p>
+                <p>Phone: +1 (234) 567-8900</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling to the exclusive products section
+        document.getElementById('shop-now').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('exclusive-products').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function () {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                alert('You searched for: ' + query);
+            } else {
+                alert('Please enter a search query!');
+            }
+        });
+
+        // Product filter by price
+        function filterProducts() {
+            const priceFilter = prompt('Enter a maximum price (e.g., 500):');
+            if (priceFilter) {
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(function (card) {
+                    const productPrice = parseInt(card.getAttribute('data-price'));
+                    if (productPrice > priceFilter) {
+                        card.style.display = 'none';
+                    } else {
+                        card.style.display = 'block';
+                    }
+                });
+            }
+        }
+
+        // Uncomment this line if you want to call the filter function when the page loads
+        // filterProducts();
+    </script>
+
+</body>
+</html>

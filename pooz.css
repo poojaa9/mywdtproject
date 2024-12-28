@@ -1,0 +1,445 @@
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #0e0b0b; /* Dark header background */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+    margin-top: 40px;
+  }
+  
+  .logo-link:hover {
+    color: #f5a623; /* Accent color for hover */
+  }
+  
+  /* Navigation Bar */
+  .nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: #ddd; /* Light gray text */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #f5a623; /* Accent color for hover */
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    position: relative;
+  }
+  
+  .search-input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    width: 250px;
+  }
+  
+  .search-input::placeholder {
+    color: #bbb;
+  }
+  
+  /* User Actions - Cart and Sign In */
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .cart-icon img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f5a623;
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+  }
+  
+  .signin-link {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .signin-link:hover {
+    color: #f5a623;
+  }
+/* General Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background-image:url("hbg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+  }
+  
+  .hero-content {
+    z-index: 2;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f5a623;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ddd;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .cta-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #f5a623;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: #e4881d;
+  }
+  
+  .cta-btn.secondary {
+    background-color: #333;
+    color: #f5a623;
+  }
+  
+  .cta-btn.secondary:hover {
+    background-color: #444;
+  }
+  /* Countdown Timer */
+.countdown-timer-container {
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  .countdown-title {
+    font-size: 1.5rem;
+    color: #f5a623;
+    margin-bottom: 10px;
+  }
+  
+  .countdown-timer {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #333; /* Dark background for timer */
+    padding: 10px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .countdown-timer div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .countdown-timer span {
+    font-size: 2.5rem;
+    color: #f5a623; /* Accent color for the numbers */
+  }
+  
+  .countdown-timer p {
+    font-size: 1rem;
+    color: #bbb;
+  }
+  
+  /* Promotional Banner */
+  .promo-banner {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 87, 34, 0.9); /* Orange banner with transparency */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .promo-banner p {
+    margin: 0;
+  }
+  
+  /* Promotions Section */
+  .promotions {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .promotions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .promo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .promo-img img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .promo-details {
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .promo-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .promo-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .promo-btn {
+    padding: 10px 20px;
+    background-color: #f5a623;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Why Choose Us Section */
+  .why-choose-us {
+    padding: 60px 20px;
+    background-color: #222;
+    text-align: center;
+  }
+  
+  .choose-us-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  
+  .choose-us-item {
+    max-width: 300px;
+  }
+  
+  .choose-us-item h3 {
+    font-size: 1.8rem;
+    color: #f5a623;
+    margin-bottom: 10px;
+  }
+  
+  .choose-us-item p {
+    font-size: 1rem;
+    color: #ddd;
+  }
+  
+  /* Customer Reviews Section */
+  .reviews {
+    padding: 60px 20px;
+    background-color: #333;
+    text-align: center;
+  }
+  
+  .reviews-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .review-item {
+    max-width: 300px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .review-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .review-item p:last-child {
+    font-weight: bold;
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #222;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+  }
+  
+  .footer-links ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #f5a623;
+  }
+  
+  .footer-socials ul {
+    list-style-type: none;
+  }
+  
+  .footer-socials ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .social-icon {
+    text-decoration: none;
+    color: #f5a623;
+    font-size: 1.5rem;
+  }
+  
+  .footer-text {
+    color: #ddd;
+    margin-top: 20px;
+  }
+  

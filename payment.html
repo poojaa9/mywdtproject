@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Jewelry</title>
+    <link rel="stylesheet" href="F:\Documents\Desktop\sass\Shopping\payment.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><img src="WhatsApp Image 2024-12-22 at 10.59.18 PM.jpeg" width="250px"></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Payment Form Section -->
+    <div class="form-container">
+        <h2>Enter Your Payment Details</h2>
+        <form id="payment-form">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9876 5432" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="123" required>
+
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" placeholder="John Doe" required>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+    
+    <script>
+        // Handle form submission and payment logic
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+            // Simulate payment processing
+            alert('Payment successful! Your order is being processed.');
+            // Redirect to a confirmation page or home page after payment
+            window.location.href = 'sucess.html'; // Order confirmation URL
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Address - Jewelry</title>
+    <link rel="stylesheet" href="F:\Documents\Desktop\sass\Shopping\shipping.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><img src="WhatsApp Image 2024-12-22 at 10.59.18 PM.jpeg" width="250px"></h1>
+               
+            </div>
+            
+            <ul class="nav-links">
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Shipping Address Form Section -->
+    <div class="form-container">
+        <h2>Enter Your Shipping Address</h2>
+        <form id="shipping-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" placeholder="John Doe" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="123 Street Name" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="New York" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" placeholder="NY" required>
+
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" placeholder="10001" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" placeholder="USA" required>
+
+             <button type="submit"><a href="F:\Documents\Desktop\sass\Shopping\payment.html" >Proceed to Payment</a></button>
+        </form>
+    </div>
+
+    <script>
+        // Redirect to Payment Page upon form submission
+        document.getElementById('shipping-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page refresh
+            // Redirect to payment page
+            window.location.href = 'payment.html'; // Payment page URL
+        });
+    </script>
+
+</body>
+</html>

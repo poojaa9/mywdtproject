@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroceryMart</title>
+    <link rel="stylesheet" href="F:\Documents\Desktop\sass\Shopping\grocery.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1><img src="WhatsApp Image 2024-12-22 at 10.59.18 PM.jpeg" width="250px"></h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for groceries...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="icons">
+            <a>Cart</a>
+            <a>Account</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Fresh Groceries, Delivered to Your Door</h2>
+            <p>Your one-stop shop for all your grocery needs!</p>
+            <a href="#products" class="cta-button" id="shop-now">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="product-section">
+        <h2>Our Fresh Products</h2>
+        <div class="product-container" id="product-container">
+            <!-- Example Product 1 -->
+            <div class="product-card" data-price="3.99">
+                <img src="brocolli.jpg" alt="Fresh Apples">
+                <h3>Fresh Brocolli</h3>
+                <p>$3.99</p>
+                <button class="add-to-cart" data-product="Fresh Apples" data-price="3.99"><a href="F:\Documents\Desktop\sass\Shopping\cart.html">Buy Now</a></button>
+            </div>
+            <!-- Example Product 2 -->
+            <div class="product-card" data-price="1.99">
+                <img src="mango.jpg" alt="Bananas">
+                <h3>Mango</h3>
+                <p>$1.99</p>
+                <button class="add-to-cart" data-product="Bananas" data-price="1.99">Buy Now</button>
+            </div>
+            <div class="product-card" data-price="1.99">
+                <img src="F:\Documents\Desktop\carr.jpg" alt="Bananas">
+                <h3>Carrots</h3>
+                <p>$1.99</p>
+                <button class="add-to-cart" data-product="Bananas" data-price="1.99">Buy Now</button>
+            </div>
+            <div class="product-card" data-price="1.99">
+                <img src="onion.jpg" alt="Bananas">
+                <h3>Onion</h3>
+                <p>$1.99</p>
+                <button class="add-to-cart" data-product="Bananas" data-price="1.99">Buy Now</button>
+            </div>
+            <div class="product-card" data-price="1.99">
+                <img src="tomato.jpg" alt="Bananas">
+                <h3>Fresh Tomato</h3>
+                <p>$1.99</p>
+                <button class="add-to-cart" data-product="Bananas" data-price="1.99">Buy Now</button>
+            </div>
+            <div class="product-card" data-price="1.99">
+                <img src="banana.jpg" alt="Bananas">
+                <h3>Bananas</h3>
+                <p>$1.99</p>
+                <button class="add-to-cart" data-product="Bananas" data-price="1.99">Buy Now</button>
+            </div>
+            
+            <!-- Example Product 3 -->
+            <div class="product-card" data-price="2.49">
+                <img src="F:\Documents\Desktop\pea.jpg" alt="Fresh Carrots">
+                <h3>Peas</h3>
+                <p>$2.49</p>
+                <button class="add-to-cart" data-product="Fresh Carrots" data-price="2.49">Buy Now</button>
+            </div>
+            <!-- Example Product 4 -->
+            <div class="product-card" data-price="5.99">
+                <img src="F:\Documents\Desktop\oranges.jpg" alt="Oranges">
+                <h3>Oranges</h3>
+                <p>$5.99</p>
+                <button class="add-to-cart" data-product="Oranges" data-price="5.99">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart-section" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button id="checkout-button">Proceed to Checkout</button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="contact-info">
+                <p>Contact Us: support@grocerymart.com</p>
+                <p>Phone: +1 (800) 123-4567</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling to the product section
+        document.getElementById('shop-now').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Cart functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cart-icon');
+        const cartItems = document.getElementById('cart-items');
+        const totalPriceDisplay = document.getElementById('total-price');
+
+        // Handle "Add to Cart" button clicks
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const productName = this.getAttribute('data-product');
+                const productPrice = parseFloat(this.getAttribute('data-price'));
+
+                // Add product to cart array
+                cart.push({ name: productName, price: productPrice });
+
+                // Update cart display
+                updateCart();
+            });
+        });
+
+        // Update cart display
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let totalPrice = 0;
+            cart.forEach(item => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(cartItemElement);
+                totalPrice += item.price;
+            });
+            totalPriceDisplay.textContent = totalPrice.toFixed(2);
+        }
+
+        // Handle checkout
+        document.getElementById('checkout-button').addEventListener('click', function () {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Proceeding to checkout...');
+            }
+        });
+
+        // Search functionality (basic alert for now)
+        document.getElementById('search-button').addEventListener('click', function () {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                alert('You searched for: ' + query);
+            } else {
+                alert('Please enter a search query!');
+            }
+        });
+    </script>
+
+</body>
+</html>

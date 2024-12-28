@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroMart</title>
+    <link rel="stylesheet" href="F:\Documents\Desktop\sass\Shopping\electronics.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1><img src="WhatsApp Image 2024-12-22 at 10.59.18 PM.jpeg" width="250px"></h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for products...">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="icons">
+            <a>Cart</a>
+            <a>Account</a>
+        <a>Menu</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to ElectroMart</h2>
+            <p>Your one-stop shop for the latest electronics</p>
+            <a href="#exclusive-products" class="cta-button" id="shop-now">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Exclusive Product Section -->
+    <section id="exclusive-products" class="exclusive-products">
+        <h2>Exclusive Products</h2>
+        <div class="product-container" id="product-container">
+            <div class="product-card" data-price="499">
+                <img src="microwave.jpg" alt="Product 1">
+                <h3>Microwave</h3>
+                <p>$899</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="799">
+                <img src="grinder.jpg" alt="Product 2">
+                <h3>Mixer grinder</h3>
+                <p>$199</p>
+                <a href="#">Buy Now</a>
+            </div><div class="product-card" data-price="799">
+                <img src="headphone.jpg" alt="Product 2">
+                <h3></h3>Noise Cancelling Headphones
+                <p>$799</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="799">
+                <img src="led.jpg" alt="Product 2">
+                <h3>4K TV Ultra</h3>
+                <p>$299</p>
+                <a href="#">Buy Now</a>
+            </div>
+            <div class="product-card" data-price="799">
+                <img src="mobilephone.jpg" alt="Product 2">
+                <h3>Smartphone</h3>
+                <p>$999</p>
+                <a href="#">Buy Now</a>
+            </div>
+
+            <div class="product-card" data-price="199">
+                <img src="acs.jpg" alt="Product 3">
+                <h3>Supercooling AC</h3>
+                <p>$199</p>
+                <a href="#">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="contact-info">
+                <p>Contact Us: contact@electromart.com</p>
+                <p>Phone: +1 (234) 567-8900</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling to the exclusive products section
+        document.getElementById('shop-now').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('exclusive-products').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function () {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                alert('You searched for: ' + query);
+                // You can replace the alert with actual search logic here
+            } else {
+                alert('Please enter a search query!');
+            }
+        });
+
+        // Product filter by price
+        function filterProducts() {
+            const priceFilter = prompt('Enter a maximum price (e.g., 500):');
+            if (priceFilter) {
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(function (card) {
+                    const productPrice = parseInt(card.getAttribute('data-price'));
+                    if (productPrice > priceFilter) {
+                        card.style.display = 'none';
+                    } else {
+                        card.style.display = 'block';
+                    }
+                });
+            }
+        }
+
+        // Example of using the filter function
+        filterProducts();
+    </script>
+
+</body>
+</html>
